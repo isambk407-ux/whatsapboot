@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nutrilaben – Promocja Black Friday</title>
+<meta name="description" content="Nutrilaben – suplement diety wspierający zdrowe nawyki. Promocja Black Friday: do -40% na zestawy. Płatność przy odbiorze.">
+<style>
+  :root{
+    --red:#e11d2e; --red-dark:#b3121f; --yellow:#ffd60a; --green:#14a44d;
+    --ink:#111827; --muted:#6b7280; --bg:#fff; --soft:#f6f7f9; --line:#e5e7eb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5;padding-bottom:84px}
+  img{max-width:100%;display:block}
+  .wrap{max-width:560px;margin:0 auto;padding:0 18px}
+  h1,h2,h3{line-height:1.15;letter-spacing:-.02em}
+  h2{font-size:1.65rem;margin-bottom:14px;text-align:center}
+  section{padding:40px 0}
+  .soft{background:var(--soft)}
+
+  /* top bar */
+  .topbar{background:var(--ink);color:#fff;text-align:center;font-weight:700;font-size:.9rem;padding:9px 12px}
+  .topbar b{color:var(--yellow)}
+
+  /* hero */
+  .hero{padding:28px 0 36px;text-align:center}
+  .badge{display:inline-block;background:var(--yellow);color:var(--ink);font-weight:800;font-size:.8rem;text-transform:uppercase;padding:6px 12px;border-radius:999px;margin-bottom:14px}
+  .hero h1{font-size:2.2rem;margin-bottom:12px}
+  .hero h1 span{color:var(--red)}
+  .hero p.lead{font-size:1.08rem;color:#374151;margin-bottom:20px}
+  .product-img{background:linear-gradient(135deg,#fff1f2,#fef9c3);border-radius:20px;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.9rem;margin-bottom:20px;border:2px dashed #fca5a5}
+  .checks{list-style:none;text-align:left;margin:0 auto 22px;max-width:420px}
+  .checks li{padding:7px 0 7px 32px;position:relative;font-weight:600}
+  .checks li:before{content:"✓";position:absolute;left:0;top:6px;width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;font-size:.8rem;display:flex;align-items:center;justify-content:center}
+
+  /* buttons */
+  .btn{display:block;width:100%;background:var(--red);color:#fff;text-decoration:none;text-align:center;font-weight:800;font-size:1.15rem;text-transform:uppercase;padding:18px 20px;border-radius:14px;border:0;cursor:pointer;box-shadow:0 6px 0 var(--red-dark);transition:transform .08s}
+  .btn:active{transform:translateY(3px);box-shadow:0 3px 0 var(--red-dark)}
+  .btn small{display:block;font-size:.75rem;font-weight:600;text-transform:none;opacity:.9;margin-top:2px}
+  .pulse{animation:pulse 1.8s infinite}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+  .trust{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:14px;font-size:.82rem;color:var(--muted);font-weight:600}
+
+  /* countdown */
+  .countdown{background:var(--red);color:#fff;border-radius:16px;padding:18px;text-align:center;margin:0 0 22px}
+  .countdown p{font-weight:700;margin-bottom:8px}
+  .timer{display:flex;justify-content:center;gap:8px}
+  .timer div{background:#fff;color:var(--red);border-radius:10px;min-width:62px;padding:8px 4px}
+  .timer b{display:block;font-size:1.7rem;line-height:1}
+  .timer span{font-size:.7rem;text-transform:uppercase;font-weight:700}
+
+  /* steps */
+  .steps{display:grid;gap:12px}
+  .step{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+  .step .n{flex:0 0 38px;height:38px;border-radius:50%;background:var(--ink);color:var(--yellow);font-weight:800;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:1.05rem;margin-bottom:3px}
+  .step p{color:#4b5563;font-size:.95rem}
+
+  /* ingredients */
+  .ing{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .ing div{background:#fff;border-radius:14px;padding:14px;border:1px solid var(--line)}
+  .ing h3{font-size:1rem;margin-bottom:4px}
+  .ing p{font-size:.85rem;color:#4b5563}
+
+  /* compare */
+  table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;font-size:.92rem}
+  th,td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:center}
+  th:first-child,td:first-child{text-align:left}
+  thead th{background:var(--ink);color:#fff}
+  thead th.us{background:var(--red)}
+  .y{color:var(--green);font-weight:800}.n{color:#9ca3af;font-weight:800}
+
+  /* reviews */
+  .review{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px}
+  .stars{color:#f59e0b;letter-spacing:2px}
+  .review .who{font-weight:700;font-size:.9rem;margin-top:6px}
+  .review .who span{color:var(--green);font-weight:600;font-size:.8rem}
+  .placeholder-note{font-size:.78rem;color:var(--red);text-align:center;margin-bottom:12px}
+
+  /* offer */
+  .packs{display:grid;gap:12px;margin-bottom:18px}
+  .pack{position:relative;display:flex;align-items:center;gap:12px;border:2px solid var(--line);border-radius:16px;padding:16px;cursor:pointer;background:#fff}
+  .pack input{accent-color:var(--red);width:22px;height:22px}
+  .pack.best{border-color:var(--red);background:#fff5f5}
+  .pack .tag{position:absolute;top:-11px;right:14px;background:var(--red);color:#fff;font-size:.72rem;font-weight:800;padding:3px 10px;border-radius:999px;text-transform:uppercase}
+  .pack .info{flex:1}
+  .pack .info b{display:block;font-size:1.05rem}
+  .pack .info small{color:var(--muted)}
+  .pack .price{text-align:right}
+  .pack .price b{display:block;font-size:1.3rem;color:var(--red)}
+  .pack .price small{color:var(--green);font-weight:700}
+
+  /* form */
+  form{background:#fff;border-radius:18px;padding:20px;border:2px solid var(--ink)}
+  label{display:block;font-weight:700;font-size:.9rem;margin:12px 0 5px}
+  input[type=text],input[type=tel]{width:100%;padding:14px;border:1.5px solid #d1d5db;border-radius:10px;font-size:1rem}
+  input:focus{outline:none;border-color:var(--red)}
+  .cod{display:flex;gap:10px;align-items:center;background:#ecfdf5;border-radius:10px;padding:12px;margin:16px 0;font-size:.9rem;font-weight:600;color:#065f46}
+  .consent{font-size:.75rem;color:var(--muted);margin:12px 0 16px}
+  .consent a{color:inherit}
+
+  /* guarantee */
+  .guarantee{display:flex;gap:14px;align-items:center;background:var(--ink);color:#fff;border-radius:16px;padding:18px;margin-top:20px}
+  .seal{flex:0 0 70px;height:70px;border-radius:50%;background:var(--yellow);color:var(--ink);font-weight:900;display:flex;align-items:center;justify-content:center;text-align:center;font-size:.78rem;line-height:1.05}
+
+  /* faq */
+  details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+  summary{font-weight:700;cursor:pointer;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary:after{content:"+";float:right;color:var(--red);font-weight:800}
+  details[open] summary:after{content:"–"}
+  details p{margin-top:8px;color:#4b5563;font-size:.95rem}
+
+  footer{background:#0b0f19;color:#9ca3af;font-size:.78rem;padding:28px 0;text-align:center}
+  footer a{color:#d1d5db;margin:0 6px}
+  footer p{margin-top:10px}
+
+  /* sticky */
+  .sticky{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:10px 14px;z-index:50;box-shadow:0 -6px 20px rgba(0,0,0,.08)}
+  .sticky .btn{max-width:560px;margin:0 auto;padding:14px;font-size:1rem}
+</style>
+</head>
+<body>
+
+<div class="topbar">🔥 BLACK FRIDAY: <b>do -40%</b> na zestawy + <b>darmowa dostawa</b> do 30.11</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="badge">Suplement diety · Promocja tylko do 30.11</div>
+    <h1>Twój plan na formę zaczyna się <span>dziś</span>, nie od poniedziałku</h1>
+    <p class="lead">Nutrilaben to codzienne wsparcie dla zbilansowanej diety i aktywnego stylu życia. Prosty napój w proszku – 1 porcja dziennie, bez cukru.</p>
+
+    <!-- ZAMIEŃ na prawdziwe zdjęcie produktu (bez zdjęć "przed/po") -->
+    <div class="product-img">[ Zdjęcie opakowania Nutrilaben ]</div>
+
+    <ul class="checks">
+      <li>0 g cukru w porcji</li>
+      <li>Łatwy w użyciu – wystarczy wymieszać z wodą</li>
+      <li>Skład oparty na [SKŁADNIK 1] i [SKŁADNIK 2]</li>
+      <li>Płatność przy odbiorze – zero ryzyka z góry</li>
+    </ul>
+
+    <a href="#order" class="btn pulse">Odbierz rabat -40% teraz<small>Oferta kończy się 30.11 o 23:59</small></a>
+    <div class="trust"><span>🚚 Wysyłka 24h</span><span>💳 Płatność przy odbiorze</span><span>↩️ 30 dni na zwrot</span></div>
+  </div>
+</header>
+
+<!-- COUNTDOWN -->
+<div class="wrap">
+  <div class="countdown">
+    <p>⏰ Promocja Black Friday kończy się za:</p>
+    <div class="timer" id="timer">
+      <div><b id="d">0</b><span>dni</span></div>
+      <div><b id="h">00</b><span>godz</span></div>
+      <div><b id="m">00</b><span>min</span></div>
+      <div><b id="s">00</b><span>sek</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="soft">
+  <div class="wrap">
+    <h2>Jak włączyć Nutrilaben do dnia?</h2>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><div><h3>Rano: 1 porcja</h3><p>Wymieszaj 1 miarkę z ok. 250 ml wody. Smak [SMAK], bez cukru.</p></div></div>
+      <div class="step"><div class="n">2</div><div><h3>Zbilansowane posiłki</h3><p>Stawiaj na warzywa, białko i regularne pory jedzenia. Nutrilaben ma to wspierać, nie zastępować.</p></div></div>
+      <div class="step"><div class="n">3</div><div><h3>Ruch każdego dnia</h3><p>Spacer, rower, trening – cokolwiek lubisz. Konsekwencja wygrywa z perfekcją.</p></div></div>
+      <div class="step"><div class="n">4</div><div><h3>Kuracja 30–90 dni</h3><p>Nawyki budują się tygodniami. Dlatego najbardziej opłacają się większe zestawy.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INGREDIENTS -->
+<section>
+  <div class="wrap">
+    <h2>Co jest w środku?</h2>
+    <!-- Wpisz tylko DOZWOLONE oświadczenia zdrowotne UE (rejestr EFSA / Rozporządzenie 432/2012) dla Twoich składników -->
+    <div class="ing">
+      <div><h3>[Składnik 1]</h3><p>[Dozwolone oświadczenie, np. „Chrom pomaga w utrzymaniu prawidłowego poziomu glukozy we krwi”]</p></div>
+      <div><h3>[Składnik 2]</h3><p>[Dozwolone oświadczenie z rejestru UE]</p></div>
+      <div><h3>[Składnik 3]</h3><p>[Dozwolone oświadczenie z rejestru UE]</p></div>
+      <div><h3>[Składnik 4]</h3><p>[Dozwolone oświadczenie z rejestru UE]</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="soft">
+  <div class="wrap">
+    <h2>Dlaczego Nutrilaben?</h2>
+    <table>
+      <thead><tr><th></th><th class="us">Nutrilaben</th><th>Słodzone koktajle</th><th>Napoje z kofeiną</th></tr></thead>
+      <tbody>
+        <tr><td>Bez cukru</td><td class="y">✓</td><td class="n">✗</td><td class="n">–</td></tr>
+        <tr><td>Bez kofeiny</td><td class="y">✓</td><td class="y">✓</td><td class="n">✗</td></tr>
+        <tr><td>1 porcja dziennie</td><td class="y">✓</td><td class="n">✗</td><td class="n">✗</td></tr>
+        <tr><td>Płatność przy odbiorze</td><td class="y">✓</td><td class="n">–</td><td class="n">–</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:22px"><a href="#order" class="btn">Chcę zestaw w promocji</a></div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section>
+  <div class="wrap">
+    <h2>Co mówią klienci</h2>
+    <p class="placeholder-note">⚠ Wstaw tylko PRAWDZIWE opinie klientów (za ich zgodą). Bez kilogramów i bez zdjęć przed/po.</p>
+    <div class="review"><div class="stars">★★★★★</div><p>„Wreszcie coś, co łatwo wpleść w poranek. Smak dobry, bez cukru – piję codziennie od miesiąca.”</p><div class="who">[Imię, miasto] <span>✔ Zweryfikowany zakup</span></div></div>
+    <div class="review"><div class="stars">★★★★★</div><p>„Dostawa w 2 dni, płaciłam kurierowi. Pomaga mi trzymać się planu i regularnych posiłków.”</p><div class="who">[Imię, miasto] <span>✔ Zweryfikowany zakup</span></div></div>
+    <div class="review"><div class="stars">★★★★☆</div><p>„Wziąłem zestaw 3+2, bo wychodzi najtaniej. Obsługa szybko odpowiada na pytania.”</p><div class="who">[Imię, miasto] <span>✔ Zweryfikowany zakup</span></div></div>
+  </div>
+</section>
+
+<!-- OFFER + FORM -->
+<section class="soft" id="order">
+  <div class="wrap">
+    <h2>Wybierz zestaw 👇</h2>
+    <p style="text-align:center;margin:-6px 0 18px;color:#374151">Ceny Black Friday obowiązują do <b>30.11, 23:59</b>.</p>
+
+    <!-- USTAW prawdziwe ceny. Przekreślaj tylko cenę, po której faktycznie sprzedawałeś w ostatnich 30 dniach (dyrektywa Omnibus). -->
+    <form id="orderForm" novalidate>
+      <!-- anti-spam (caché) -->
+      <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+      <div class="packs">
+        <label class="pack"><input type="radio" name="pack" value="1"><div class="info"><b>1 opakowanie</b><small>Kuracja 30 dni</small></div><div class="price"><b>149 zł</b><small>&nbsp;</small></div></label>
+        <label class="pack best"><span class="tag">Najczęściej wybierany</span><input type="radio" name="pack" value="3" checked><div class="info"><b>2 + 1 GRATIS</b><small>Kuracja 90 dni · darmowa dostawa</small></div><div class="price"><b>298 zł</b><small>Oszczędzasz 149 zł</small></div></label>
+        <label class="pack"><span class="tag" style="background:var(--ink)">Max oszczędność</span><input type="radio" name="pack" value="5"><div class="info"><b>3 + 2 GRATIS</b><small>Kuracja 150 dni · darmowa dostawa</small></div><div class="price"><b>447 zł</b><small>-40% · oszczędzasz 298 zł</small></div></label>
+      </div>
+
+      <label for="name">Imię i nazwisko</label>
+      <input type="text" id="name" name="name" required autocomplete="name" placeholder="np. Anna Kowalska">
+      <label for="phone">Numer telefonu</label>
+      <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="np. 512 345 678" pattern="[0-9 +]{9,15}">
+      <label for="address">Adres dostawy</label>
+      <input type="text" id="address" name="address" required autocomplete="street-address" placeholder="Ulica, nr, kod pocztowy, miasto">
+
+      <!-- tracking hidden fields -->
+      <input type="hidden" name="adid"><input type="hidden" name="adsetid"><input type="hidden" name="campaignid">
+      <input type="hidden" name="adname"><input type="hidden" name="adsetname"><input type="hidden" name="fbclid">
+
+      <div class="cod">💵 Płacisz dopiero kurierowi przy odbiorze. Zadzwonimy, żeby potwierdzić zamówienie.</div>
+      <p class="consent">Klikając „Zamawiam”, akceptujesz <a href="[REGULAMIN]">Regulamin</a> i <a href="[POLITYKA_PRYWATNOSCI]">Politykę prywatności</a>. Twoje dane wykorzystamy wyłącznie do realizacji zamówienia.</p>
+      <p id="formError" style="display:none;color:var(--red);font-weight:700;margin-bottom:12px"></p>
+      <button type="submit" id="submitBtn" class="btn pulse">Zamawiam z rabatem<small>Płatność przy odbiorze · wysyłka 24h</small></button>
+    </form>
+
+    <div id="thanks" style="display:none;background:#fff;border:2px solid var(--green);border-radius:18px;padding:28px 20px;text-align:center">
+      <div style="font-size:3rem">✅</div>
+      <h2 style="margin:8px 0">Dziękujemy za zamówienie!</h2>
+      <p style="color:#374151">Wkrótce zadzwonimy na podany numer, aby potwierdzić zamówienie i adres dostawy. Odbierz telefon 🙂</p>
+    </div>
+
+    <div class="guarantee">
+      <div class="seal">30 DNI<br>NA ZWROT</div>
+      <div><b>Kupujesz bez ryzyka.</b><br><span style="font-size:.9rem;color:#d1d5db">Jeśli produkt Ci nie odpowiada, odeślij go w ciągu 30 dni – zwrócimy pieniądze. Szczegóły w <a href="[REGULAMIN]" style="color:#ffd60a">Regulaminie</a>.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <h2>Najczęstsze pytania</h2>
+    <details><summary>Jak stosować Nutrilaben?</summary><p>1 porcja dziennie, rozpuszczona w ok. 250 ml wody. Nie przekraczaj zalecanej porcji.</p></details>
+    <details><summary>Czy muszę płacić z góry?</summary><p>Nie. Płacisz kurierowi przy odbiorze paczki – gotówką lub kartą (jeśli kurier ma terminal).</p></details>
+    <details><summary>Ile trwa dostawa?</summary><p>Wysyłamy w ciągu 24h od potwierdzenia telefonicznego. Dostawa zwykle trwa 1–3 dni robocze.</p></details>
+    <details><summary>Czy produkt jest dla każdego?</summary><p>Nie jest przeznaczony dla kobiet w ciąży, karmiących, dzieci ani osób z przewlekłymi chorobami bez konsultacji z lekarzem. Przy alergii sprawdź skład na opakowaniu.</p></details>
+    <details><summary>Kiedy zobaczę efekty?</summary><p>To zależy od Ciebie: diety, aktywności i regularności. Suplement jest dodatkiem do zdrowych nawyków – dlatego polecamy kurację min. 90 dni. Rezultaty są indywidualne.</p></details>
+    <details><summary>Czy mogę zwrócić produkt?</summary><p>Tak, masz 30 dni na zwrot. Napisz do nas na [EMAIL], a wyślemy instrukcję.</p></details>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="soft" style="text-align:center">
+  <div class="wrap">
+    <h2>Promocja nie wróci po 30.11</h2>
+    <p style="margin-bottom:18px;color:#374151">Po Black Friday zestawy wracają do ceny regularnej. Zamów teraz, zapłać przy odbiorze.</p>
+    <a href="#order" class="btn pulse">Odbierz -40% teraz</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><a href="[REGULAMIN]">Regulamin</a>·<a href="[POLITYKA_PRYWATNOSCI]">Polityka prywatności</a>·<a href="mailto:[EMAIL]">Kontakt</a></div>
+    <p><b>Nutrilaben jest suplementem diety.</b> Suplement diety nie może być stosowany jako substytut (zamiennik) zróżnicowanej diety. Zrównoważony sposób żywienia i zdrowy tryb życia są ważne dla funkcjonowania organizmu. Nie przekraczać zalecanej porcji do spożycia w ciągu dnia. Przechowywać w miejscu niedostępnym dla małych dzieci. Rezultaty mogą się różnić w zależności od osoby.</p>
+    <p>[NAZWA FIRMY] · [ADRES] · NIP: [NIP] · [EMAIL] · [TELEFON]</p>
+    <p>Ta strona nie jest częścią witryny Facebook ani Meta Platforms, Inc. i nie jest w żaden sposób przez nie wspierana.</p>
+  </div>
+</footer>
+
+<div class="sticky"><a href="#order" class="btn">🔥 Zamów z rabatem -40%</a></div>
+
+<script>
+  // Prawdziwy termin końca promocji – zmień, jeśli przedłużasz ofertę.
+  var END = new Date("2026-11-30T23:59:59+01:00").getTime();
+  function pad(n){return n<10?"0"+n:n}
+  function tick(){
+    var t = Math.max(0, END - Date.now());
+    document.getElementById("d").textContent = Math.floor(t/864e5);
+    document.getElementById("h").textContent = pad(Math.floor(t/36e5)%24);
+    document.getElementById("m").textContent = pad(Math.floor(t/6e4)%60);
+    document.getElementById("s").textContent = pad(Math.floor(t/1e3)%60);
+  }
+  tick(); setInterval(tick, 1000);
+
+  // Przenosi parametry z URL (adid, fbclid...) do ukrytych pól formularza
+  var q = new URLSearchParams(location.search);
+  ["adid","adsetid","campaignid","adname","adsetname","fbclid"].forEach(function(k){
+    var el = document.querySelector('input[name="'+k+'"]');
+    if (el && q.get(k)) el.value = q.get(k);
+  });
+
+  // ===== Wysyłka formularza do Google Sheets =====
+  // WKLEJ tutaj URL Web App z Apps Script (kończy się na /exec)
+  var SHEET_URL = "PASTE_YOUR_WEB_APP_URL_HERE";
+
+  var form = document.getElementById('orderForm');
+  var btn = document.getElementById('submitBtn');
+  var err = document.getElementById('formError');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    err.style.display = 'none';
+
+    var phone = form.phone.value.replace(/[^0-9+]/g, '');
+    if (form.name.value.trim().length < 3) return showErr('Podaj imię i nazwisko.');
+    if (phone.length < 9) return showErr('Podaj poprawny numer telefonu.');
+    if (form.address.value.trim().length < 8) return showErr('Podaj pełny adres dostawy.');
+
+    btn.disabled = true;
+    btn.innerHTML = 'Wysyłanie...';
+
+    var data = new URLSearchParams(new FormData(form));
+    data.set('phone', phone);
+    data.set('page', location.href.split('#')[0]);
+
+    fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', body: data })
+      .then(function(){
+        if (window.fbq) fbq('track', 'Lead'); // Pixel Meta (jeśli zainstalowany)
+        form.style.display = 'none';
+        document.getElementById('thanks').style.display = 'block';
+        document.getElementById('thanks').scrollIntoView({behavior:'smooth', block:'center'});
+      })
+      .catch(function(){
+        btn.disabled = false;
+        btn.innerHTML = 'Zamawiam z rabatem<small>Płatność przy odbiorze · wysyłka 24h</small>';
+        showErr('Błąd połączenia. Spróbuj ponownie.');
+      });
+  });
+
+  function showErr(msg){ err.textContent = msg; err.style.display = 'block'; }
+
+  // Podświetlenie wybranego zestawu
+  document.querySelectorAll('.pack input').forEach(function(r){
+    r.addEventListener('change', function(){
+      document.querySelectorAll('.pack').forEach(function(p){p.style.borderColor=''});
+      r.closest('.pack').style.borderColor = 'var(--red)';
+    });
+  });
+</script>
+</body>
+</html>
